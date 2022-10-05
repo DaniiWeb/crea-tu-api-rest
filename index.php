@@ -5,10 +5,10 @@
         case 'GET':
             //Si existe el indice id en el metodo $_GET (Es decir, si te pasan pos url el id), traeras y convertiras el dato que tenga ese id en un Json, sino devolvemos todos los datos convertidos a Json
             if(isset($_GET['id'])){
-                echo json_encode(Client::getData($_GET['id'], null)); 
+                echo json_encode(Client::getData($_GET['id'], NULL)); 
             }else{
                 if(isset($_GET['name'])) { //Si no me trajo una id en la peticion, probaremos con el name o el campo que usted requiera
-                    echo json_encode(Client::getData(null, $_GET['name'])); 
+                    echo json_encode(Client::getData(NULL, $_GET['name'])); 
                 }else{ //Si no trae nada en la peticion, trae todos los datos
                     echo json_encode(Client::getAll());
                 }
