@@ -18,7 +18,7 @@
             $data = json_decode(file_get_contents('php://input')); //Desconvertimos el Json, leemos los datos que estemos enviando por el metodo POST (NO COMENTAR!!!!!!!)
             
             if($data !== null){
-                if (Client::insertData($data->name, $data->lastname)) { //Accedemos a los valores que nos esta enviando, lo ponemos dentro de un if ya que nos devuelve un TRUE/FALSE
+                if (Client::postData($data->name, $data->lastname)) { //Accedemos a los valores que nos esta enviando, lo ponemos dentro de un if ya que nos devuelve un TRUE/FALSE
                     http_response_code(200); //Respuesta esperada, codigos 200 (OK)
                 }else{
                     http_response_code(502); //Respuesta de mala entrada

@@ -43,7 +43,7 @@
             return $data;
         }
 
-        public static function insertData($name, $lastname){ //POST
+        public static function postData($name, $lastname){ //POST
             $db = new Connection();
             $query = 'INSERT INTO table_name (name, lastname) 
                         VALUES(\''.$name.'\', \''.$lastname.'\')'; //Creamos la consulta de insercion
